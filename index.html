@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="./images/download.png" />
+  </head>
+
+  <body style="background-color: black">
+    <!-- main -->
+    <div class="main">
+      <nav>
+        <span><img src="./images/Netflix_Logo_PMS.png" /></span>
+        <div>
+          <button class="btn trans-sm">
+            <select>
+              <option style="background-color: black">English</option>
+              <option>हिन्दी</option>
+            </select>
+          </button>
+          <button class="btn red-sm" onclick="goToSignup()">Sign In</button>
+        </div>
+      </nav>
+      <div class="box"></div>
+      <div class="hero">
+        <h1>
+          <b
+            >Unlimited movies,<br />
+            TV shows and more</b
+          >
+        </h1>
+        <span>Starts at ₹149. Cancel at any time.</span>
+        <span
+          >Ready to watch? Enter your email to create or restart your
+          membership.</span
+        >
+        <div class="hero-buttons">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="Email Address"
+            required
+          />
+          <button class="btn btn-red" onclick="goToSignup()">
+            Get Started
+          </button>
+        </div>
+      </div>
+
+      <div class="separation">
+        <div class="curve-line"></div>
+      </div>
+    </div>
+
+    <section class="first">
+      <h2>Trending Now</h2>
+
+      <div class="slider-wrapper">
+        <button class="arrow left" onclick="moveLeft()">&#10094;</button>
+
+        <div class="trend" id="slider">
+          <div
+            class="cards"
+            onclick="openMovie(this)"
+            data-title="MAAMLA LEGAL HAI "
+            data-desc="Chaos collides with the letter of the law at District Court Patparganj."
+          >
+            <img src="./images/img1.webp" alt="" />
+          </div>
+          <div
+            class="cards"
+            onclick="openMovie(this)"
+            data-title="MADE IN KOREA"
+            data-desc="A woman from a small town in Tamil Nadu moves to South Korea — a place she always dreamed of — but struggles to find her footing in a foreign land."
+          >
+            <img src="./images/img2.webp" alt="" />
+          </div>
+          <div
+            class="cards"
+            onclick="openMovie(this)"
+            data-title="XO, Kitty"
+            data-desc="Following her heart to an elite high school in Seoul, teen matchmaker Kitty learns that life, love and family are more complicated than she ever imagined."
+          >
+            <img src="./images/img3.webp" alt="" />
+          </div>
+          <div
+            class="cards"
+            onclick="openMovie(this)"
+            data-title="BLOODHOUNDS"
+            data-desc="Faced with ruthless foes with a violent thirst, two young boxers band together — risking life and limb to bring justice and protect their loved ones."
+          >
+            <img src="./images/img4.webp" alt="" />
+          </div>
+          <div
+            class="cards"
+            onclick="openMovie(this)"
+            data-title="TASKAREE"
+            data-desc="A dedicated customs officer and his team take on a notorious smuggler leading a powerful syndicate, but unexpected obstacles threaten their mission."
+          >
+            <img src="./images/img5.webp" alt="" />
+          </div>
+          <div
+            class="cards"
+            onclick="openMovie(this)"
+            data-title="STRANGER THING"
+            data-desc="When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl."
+          >
+            <img src="./images/img6.webp" alt="" />
+          </div>
+          <div
+            class="cards"
+            onclick="openMovie(this)"
+            data-title="TERE ISHK MEIN"
+            data-desc="A hot-headed fighter pilot and a psychologist confront their turbulent romantic past when they meet years later — with new lives and unresolved feelings."
+          >
+            <img src="./images/img7.webp" alt="" />
+          </div>
+          <div
+            class="cards"
+            onclick="openMovie(this)"
+            data-title="SEX LIFE"
+            data-desc="A woman's daring sexual past collides with her married-with-kids present when the bad-boy ex she can't stop fantasizing about crashes back into her life."
+          >
+            <img src="./images/img8.webp" alt="" />
+          </div>
+          <div
+            class="cards"
+            onclick="openMovie(this)"
+            data-title="WAR MACHINE"
+            data-desc="On one last grueling mission during Army Ranger training, a combat engineer must lead his unit in a fight against a giant otherworldly killing machine."
+          >
+            <img src="./images/img9.webp" alt="" />
+          </div>
+          <div
+            class="cards"
+            onclick="openMovie(this)"
+            data-title="ANAGANAGA OKA RAJU"
+            data-desc="A quick-thinking man tries to shortcut his way to a better life and chase a promising match, but love and family force him to rethink his path."
+          >
+            <img src="./images/img10.webp" alt="" />
+          </div>
+        </div>
+
+        <button class="arrow right" onclick="moveRight()">&#10095;</button>
+      </div>
+    </section>
+    <!-- Popup Modal -->
+    <div class="movie-popup" id="moviePopup" onclick="closeMovie()">
+      <div class="popup-content" onclick="event.stopPropagation()">
+        <img id="popupImage" src="" alt="" />
+        <h2 id="popupTitle"></h2>
+        <p id="popupDesc"></p>
+        <br />
+        <button class="btn btn-red">Get Started</button>
+      </div>
+    </div>
+    <div class="separation"></div>
+
+    <section class="second">
+      <h2>More reasons to join</h2>
+
+      <div class="slider-wrapper">
+        <div class="details">
+          <div class="card">
+            <h2>Enjoy on your TV</h2>
+            <br />
+            <p>
+              Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
+              Blu-ray players and more.
+            </p>
+          </div>
+          <div class="card">
+            <h2>Enjoy on your TV</h2>
+            <br />
+            <p>
+              Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
+              Blu-ray players and more.
+            </p>
+          </div>
+          <div class="card">
+            <h2>Enjoy on your TV</h2>
+            <br />
+            <p>
+              Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
+              Blu-ray players and more.
+            </p>
+          </div>
+          <div class="card">
+            <h2>Enjoy on your TV</h2>
+            <br />
+            <p>
+              Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
+              Blu-ray players and more.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="separation"></section>
+
+    <div class="separation"></div>
+
+    <!-- footer -->
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>What is Netflix?</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+          Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices. <br> <br> 
+          You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>How much does Netflix cost?</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+          Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649/month.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>What can i watch?</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+          Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles. <br> <br>
+           You can also download your favourite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>How do i cancel?</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+          Netflix is flexible. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>What can i watch on Netflix?</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+          Netflix has an extensive library of feature films, documentaries, shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span>Is Netflix good for kids?</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-answer">
+          The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space. <br> <br>
+            Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.
+        </div>
+      </div>
+
+      
+
+      <div class="hero" style="padding-top: 100px;">
+        <span>Starts at ₹149. Cancel at any time.</span>
+        <span
+          >Ready to watch? Enter your email to create or restart your
+          membership.</span
+        >
+        <div class="hero-buttons">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="Email Address"
+            required
+          />
+          <button class="btn btn-red" onclick="goToSignup()">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </section>
+    <div class="separation" style="padding-top: 100px;"></div>
+    <footer>
+      <div class="question">Questions? Call 000-800-919-1694</div>
+      <div class="footer">
+        <div class="footer-item">
+          <a href="#">FAQ</a>
+          <a href="#">Investor Relations</a>
+          <a href="#">Privacy</a>
+          <a href="#">Speed Test</a>
+        </div>
+
+        <div class="footer-item">
+          <a href="#">Help Centre</a>
+          <a href="#">Jobs</a>
+          <a href="#">Cookie Preferences</a>
+          <a href="#">Legal Notices</a>
+        </div>
+
+        <div class="footer-item">
+          <a href="#">Account</a>
+          <a href="#">Ways to Watch</a>
+          <a href="#">Corporate Information</a>
+          <a href="#">Only on Netflix</a>
+        </div>
+
+        <div class="footer-item">
+          <a href="#">Media Centre</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+
+      <button class="btn trans-sm">
+            <select>
+              <option style="background-color: black">English</option>
+              <option>हिन्दी</option>
+            </select>
+          </button>
+      <br>
+      <p style="color: white;padding: 20px;"><b>This page is just a prototype not the actual one.</b></p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="icon" type="image/png" href="./images/download.png" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      .main {
+        background-color: white;
+      }
+
+      .separation {
+        background-color: rgb(0, 0, 0);
+        position: relative;
+      }
+
+      .container {
+        height: 80vh;
+        position: relative;
+        min-height: 50vh;
+        display: flex;
+        justify-content: center; /* horizontal center */
+        align-items: center; /* vertical center */
+        background-color: white;
+      }
+
+      nav {
+        max-width: 80%;
+        margin: auto;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        height: 100px;
+      }
+
+      nav img {
+        width: 250px;
+        height: 80px;
+        position: relative;
+        z-index: 10;
+      }
+
+      nav button {
+        position: relative;
+        z-index: 10;
+      }
+
+      .btn {
+        margin-top: 20px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        background-color: rgba(248, 243, 243, 0.021);
+        /* border: 1px solid white; */
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .red-sm {
+        padding: 8px 13px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        /* border: 2px solid red; */
+        /* border-radius: 5px; */
+        border: none;
+      }
+
+      .signup-box {
+        width: 500px;
+        text-align: left;
+      }
+
+      button {
+        margin-top: 80px;
+        background-color: red;
+        color: white;
+        padding: 5px 15px;
+        font-size: 15px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- main -->
+    <div class="main">
+      <nav>
+        <span><img src="./images/Netflix_Logo_PMS.png" /></span>
+        <div>
+          <button class="btn red-sm">Sign In</button>
+        </div>
+      </nav>
+      <div class="separation">
+        <div class="curve-line"></div>
+      </div>
+      <div class="container">
+        <div class="image">
+          <img src="./images/download.png" alt="" />
+        </div>
+        <div class="signup-box">
+          <p>Step 1 of 3</p>
+          <h1>Finish setting up your account</h1>
+          <p id="userEmail"></p>
+          <button class="send-btn">Send Link</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const email = localStorage.getItem("userEmail");
+      document.getElementById("userEmail").textContent =
+        "We will send a sign-up link to " +
+        email +
+        "so you can use Netflix without a password on any device at any time.";
+    </script>
+  </body>
+</html>
